@@ -25,19 +25,20 @@
 %\subtitle{Do you have a subtitle?\\ If so, write it here}
 %\titlerunning{Short form of title}        % if too long for running head
 
-\author{Rocco Oliveto \and Romain Robbes \and Massimiliano Di Penta}
+\author{Romain Robbes \and Massimiliano Di Penta \and Rocco Oliveto}
 %\authorrunning{Short form of author list} % if too long for running head
-\institute{         		Rocco Oliveto\at
-				Department of Bioscience and Territory, University of Molise, Pesche (IS) Italy\\
-				\email{rocco.oliveto@unimol.it}\\
-\and
+\institute{         	
          		Romain Robbes\at
-				T\\
-				\email{TBA}
+				Department of Computer Science (DCC), University of Chile, Chile\\
+				\email{rrobbes@dcc.uchile.cl}
 \and
 Massimiliano Di Penta \at
           		Department of Engineering, University of Sannio, Benevento, Italy  \\
           	 	\email{dipenta@unisannio.it}\\
+\and
+	Rocco Oliveto\at
+				Department of Bioscience and Territory, University of Molise, Pesche (IS) Italy\\
+				\email{rocco.oliveto@unimol.it}\\
 }
 \date{Received: date / Accepted: date}
 % The correct dates will be entered by the editor
@@ -45,7 +46,26 @@ Massimiliano Di Penta \at
 
 \maketitle
 
-TBA
+The goal of reverse engineering is to recover high-level representations of software systems from lower-level system artifacts. These artifact range from extremely low-level, such as binary files or system execution traces, to intermediate-level ones, such as source code, patches, and defects, and the history and discussions associated to these artifacts. 
+
+Reverse engineering is a mature research field with high practical relevance: often, the only way to get an understanding of a large and complex software system is through these lower-level artifacts, especially if higher-level artifaces are absent or outdated.
+
+This special issue features six papers on the topic of reverse engineering, using an array of techniques and data sources: some use very low-level artifacts, while some use higher-level ones and historical information.
+
+The first articles from this special issue, \emph{``On the detection of custom memory allocators in C binaries''} \cite{memory}, focuses on binary analysis. The article describes a technique to detect custom memory allocators and deallocators, which is vital to properly detect and track data structures in performance-critical applications. The tool implementing the technique, MemBrush, has been evaluated on a large number of real-world applications, and was found to have a high accuracy. MemBrush can then transfer that data to existing reverse engineering tools. 
+
+The article \emph{``Scalable data structure detection and classification for C/C++ binaries''} \cite{structures} also deals with binary analysis. The tool presented in the article, MemPick, analyzes the links between the objects in memory in order to detect higher-level data structures. MemPick can detect several commonly used data structures, including several types of linked lists, trees, or graphs. The tool was evaluated on 30 different systems.
+
+In \emph{``Inferring extended finite state machine models from software executions''} \cite{stateMachines}, the focus shifts to execution traces. More specifically, the goal of the article is to infer Extented Finite State Machines (EFSMs) from the excution traces. EFSMs can blend the control and data aspects of the software system under study. The technique presented to infer EFSM is based on machine learning, and is evaluated quantitatively and qualitatively on three software systems.
+
+The remainder of the special issue, starting with \emph{``Mining architectural violations from version history''} \cite{architecture}, exploits higher-level information. The article combines static and historical analysis in the context of checking the architectural conformance of a software system. Since detecting architectural violations in this way is a challenging problem, the article also proposes an iterative process for experts to verify the conformance semi-automatically,
+
+In the article \emph{``Evaluating the impact of design pattern and anti-pattern dependencies on changes and faults''} \cite{patterns}, the focus is on classes depending on design pattern (and anti-pattern) elements, under the assumption that the good and/or bad characteritics of patterns and anti-patterns may propagate to their dependencies. The article puts that assumption to the test by analysing the fault-proneness and change-proneness of depencies of six design patterns and ten anti-patterns, in the sequence of releases of three software systems.
+
+Finally, this special issue concludes with \emph{``Investigating technical and non-technical factors influencing modern code review''} \cite{codeReview}, in which the code review process of two large open-source projects is studied, in order to better understand the factors that might result in whether the code submissions are evaluated in a timely manner or not. Reverse engineering techniques are applied in order to reconstruct the patch submission process from the information in the issue tracking and code review systems.
+
+These six articles exemplify the breath, depth and quality of the research performed in the field of software reverse engineering.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -55,7 +75,7 @@ TBA
 
 
 
-\bibliographystyle{agu}
+\bibliographystyle{alpha}
 
 \bibliography{main}   % name your BibTeX data base
 
